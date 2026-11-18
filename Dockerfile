@@ -10,10 +10,10 @@ RUN apt-get update -y \
  && rm -rf /var/lib/apt/lists/*
 
 # Configuration réseau npm
-RUN npm config set fetch-retries 5 \
- && npm config set fetch-retry-mintimeout 20000 \
- && npm config set fetch-retry-maxtimeout 120000 \
- && npm config set fetch-timeout 600000
+RUN npm config set fetch-retries 10 \
+ && npm config set fetch-retry-mintimeout 30000 \
+ && npm config set fetch-retry-maxtimeout 180000 \
+ && npm config set fetch-timeout 900000
 
 # Variable temporaire pour la génération Prisma et le build
 ENV DATABASE_URL=postgresql://build:build@localhost:5432/build
@@ -63,4 +63,4 @@ EXPOSE 3000
 USER node
 
 # Appliquer les migrations puis démarrer Next.js
-CMD ["sh", "-c", "npx prisma migrate deploy && npm start"]
+CMD ["npm", "start"]

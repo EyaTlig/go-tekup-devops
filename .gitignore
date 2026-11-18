@@ -11,3 +11,41 @@ coverage/
 # Client Prisma gÃ©nÃ©rÃ© (recrÃ©Ã© par `prisma generate`)
 src/infrastructure/prisma/generated/
 .neon
+
+# Secrets et variables d'environnement
+.env*
+!.env.example
+
+# Terraform : fichiers locaux et données sensibles
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfvars
+*.tfvars.json
+
+# Sauvegardes et bases de données
+backup/
+*.dump
+*.sql
+*.backup
+
+# Fichiers temporaires et dépendances téléchargées
+*.backup
+src/presentation/http/route.ts.backup
+kube-prometheus-stack/
+kube-prometheus-stack-*.tgz
+
+# Configuration locale de monitoring pouvant contenir des identifiants
+monitoring-values.yaml
+
+# Fichiers Terraform locaux
+terraform/**/.terraform/
+terraform/**/terraform.tfstate
+terraform/**/terraform.tfstate.*
+terraform/**/terraform.tfvars
+terraform/**/terraform.tfvars.json
+
+# Archives téléchargées
+kube-prometheus-stack/
+kube-prometheus-stack-*.tgz

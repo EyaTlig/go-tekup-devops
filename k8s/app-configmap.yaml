@@ -1,0 +1,16 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: go-tekup-config
+  namespace: go-tekup
+data:
+  NODE_ENV: "production"
+  APP_URL: "http://localhost:3000"
+  COOKIE_SECURE: "false"
+  SEED_DEMO: "false"
+  ALLOWED_EMAIL_DOMAINS: "tek-up.de,tek-up.tn"
+  REQUIRE_EMAIL_VERIFICATION: "true"
+  SMTP_HOST: ""
+  SMTP_PORT: "587"
+  MAIL_FROM: "CampusConnect <no-reply@campusconnect.local>"

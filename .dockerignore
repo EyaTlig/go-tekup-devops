@@ -5,3 +5,8 @@ data
 .env
 *.md
 tests
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfvars
